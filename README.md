@@ -1,40 +1,35 @@
-# CodeAlpha - Basic Chatbot
+# CodeAlpha - Hangman Game
 
-A simple rule-based chatbot that responds to predefined phrases using
-pattern matching (regular expressions).
+A simple text-based Hangman game built in Python.
 
 ## Features
-- Responds to greetings ("hello", "hi", "hey")
-- Answers questions like "how are you", "what's your name", "what time is it"
-- Tells a joke on request
-- Handles thanks and goodbyes
-- Falls back to a generic response for unrecognized input
+- Random word selection from a built-in word bank
+- Visual ASCII hangman drawing that updates with each wrong guess
+- Maximum of 6 incorrect guesses allowed
+- Input validation (single letters only, no repeat guesses)
+- Play again option
 
 ## How to Run
 ```bash
-python chatbot.py
-```
-
-## Example Conversation
-```
-You: hello
-Bot: Hi there! What's on your mind?
-
-You: how are you
-Bot: I'm just a program, but I'm doing great! How about you?
-
-You: tell me a joke
-Bot: Why do programmers prefer dark mode? Because light attracts bugs!
-
-You: bye
-Bot: Goodbye! Have a great day!
+python hangman.py
 ```
 
 ## How It Works
-The bot uses a list of `(pattern, responses)` rules. Each user message is
-checked against these patterns using regex; if a match is found, a random
-response from that rule is returned. If nothing matches, a default fallback
-response is used.
+1. The program randomly picks a word from `WORD_BANK`.
+2. You guess one letter at a time.
+3. Correct guesses reveal the letter in the word.
+4. Incorrect guesses draw part of the hangman and use up one of your 6 attempts.
+5. You win by guessing the full word before running out of attempts.
+
+## Sample Output
+```
+Word: _ _ _ _ _ _
+Wrong guesses left: 6
+Guessed letters: None
+
+Guess a letter: a
+✅ Correct guess!
+```
 
 ## Author
 Internship Project - CodeAlpha
